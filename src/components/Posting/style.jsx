@@ -4,17 +4,18 @@ import styled from "styled-components";
 import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 import GroupsIcon from '@mui/icons-material/Groups';
 import LogoDevIcon from '@mui/icons-material/LogoDev';
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import TextField from '@mui/material/TextField';
 
 //Bgcimg
 import BgcImg from '../../images/Team.webp'
+import { Button } from "@mui/material";
 
 export const MainDiv = styled.div`
     width: 100%;
     height: 100vh;
     /* border: 1px solid red; */
     display: flex;
-    background-color:#a4c3b2 ;
+    background-color: #a4c3b2;
 `
 
 export const BarrInDiv = styled.div`
@@ -52,7 +53,6 @@ export const Label = styled.label`
 export const MuiLogoIcon = styled(LogoDevIcon)`
     color: gray !important;
     font-size: 35px !important;
-    cursor: pointer !important;
 `
 
 export const MuiUserIcon = styled(PersonAddAltIcon)`
@@ -116,88 +116,89 @@ export const TableDiv = styled.div`
     width: calc(100% - 70px);
     height: 100%;
     background-color: #a4c3b2;
+    /* border: 1px solid red; */
     display: flex;
     justify-content: center;
     align-items: center;
-    
 `
 
-export const CenterDiv = styled.div`
-    width: 100%;
-    height: 600px;
+export const CenterDIV = styled.div`
+    width: 90%;
+    height: 90%;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+`
+
+export const FormDiv = styled.div`
+    width: 400px;
+    height: 100%;
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    /* gap: 15px; */
-    overflow-y: scroll;
-
-    &::-webkit-scrollbar {
-        width: 5px;
-    }
-
-    &::-webkit-scrollbar-thumb{
-        background-color: gray;
-        border-radius: 10px;
-    }
+    box-sizing: border-box;
+    box-shadow: 0px 0px 8px #606060;
+    border-radius: 10px;
 `
 
-export const CardDiv = styled.div`
-    width: 300px;
-    height: 400px;
-    background-color: #2D325A;
-    border: 1px solid gray;
-    box-shadow: 0px 0px 8px #808080;
-    margin: 0px 0px 30px 0px;
-`
-
-export const InfoMorDiv = styled.div`
-    width: 100%;
-    height: 20px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-`
-
-export const MuiMore = styled(MoreHorizIcon)`
-    color: gray !important;
-    cursor: pointer;
-`
-
-export const CartImg = styled.img`
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-`
-
-export const InfoDiv = styled.div`
-    width: 100%;
-    height: calc(100%  - 220px);
-`
-
-export const Name = styled.h3`
-    width: 100%;
-    height: auto;
-    color: blue;
-    padding: 0px 0px 0px 10px; 
-`
-
-export const LastName = styled.h3`
-    width: 100%;
-    height: auto;
-    color: blue;
-    padding: 0px 0px 0px 10px; 
+export const ImgInp = styled.input`
+    width:100%;
+    height: 250px;
+    border:none;
+    border-top: 1px solid gray;
     border-bottom: 1px solid gray;
 `
 
-export const Type = styled.p`
-    width: 100%;
-    height: auto;
-    padding: 0px 0px 0px 10px;
-    color:#a9a9a9; 
 
+export const NameInp = styled(TextField)`
+    width: 90% !important ;
+    height: auto !important;
+    /* padding: 10px !important; */
 `
 
+export const LinkInp = styled(TextField)`
+    width: 90% !important;
+    height: auto !important;
+    /* padding: 10px !important; */
+`
+
+export const ParagrafInp = styled.textarea`
+    width: 90%;
+    height: 50px;
+    max-width: 90%;
+    max-height: 100px;
+    min-height: 50px;
+    min-width: 90%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid gray;
+    font-size: 16px;
+    color: black;
+
+
+
+
+    &:hover{
+        border-bottom: 2px solid black;
+    }
+
+
+    &::placeholder{
+        color: #0000009c;
+        font-weight: 500;
+    }
+
+    &:focus{
+        border-bottom: 1px solid blue;
+    }
+`
+
+export const PostBtn = styled(Button)`
+    width: 85% !important;
+`
 
 
 

@@ -7,6 +7,8 @@ import './App.css';
 import Login from './components/Login/Login'
 import Home from './components/Home/Home';
 import User from './components/User/User'
+import Team from './components/Team/Team'
+import Posting from './components/Posting/Posting'
 
 function App() {
   const [render, setrender] = useState(false)
@@ -26,6 +28,8 @@ function App() {
           <Route path='/' element={<Login />} />
           <Route path='/home' element={<Home Render={render} Setrender={setrender} />} />
           <Route path='/user' element={<User />} />
+          <Route path='/team' element={<Team />} />
+          <Route path='/posting' element={<Posting />} />
         </Routes>
     </div>
   );

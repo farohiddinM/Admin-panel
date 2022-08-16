@@ -16,13 +16,21 @@ const Home = ({Render,Setrender}) => {
     navigation('/user')
   }
 
+  const Admin = ()=> {
+    navigation('/home')
+  }
+
+  const TeamGroup = ()=> {
+    navigation('/team')
+  }
+
   return (
     <MainDiv>
         <Barr>
           <BarrInDiv>
-            <IconsDiv> <MuiLogoIcon /> </IconsDiv>
+            <IconsDiv> <MuiLogoIcon onClick={Admin} /> </IconsDiv>
             <IconsDiv> <MuiUserIcon onClick={Nav} /> <Label onClick={Nav} >User Add</Label> </IconsDiv>
-            <IconsDiv> <MuiTeamIcon /> <Label>Team group</Label> </IconsDiv>
+            <IconsDiv> <MuiTeamIcon onClick={TeamGroup} /> <Label onClick={TeamGroup} >Team group</Label> </IconsDiv>
           </BarrInDiv>
         </Barr>
         <TableDiv>

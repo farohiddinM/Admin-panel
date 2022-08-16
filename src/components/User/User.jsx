@@ -1,18 +1,40 @@
 import React from 'react'
 import { Barr, BarrInDiv, ButtonDiv, CardDiv, CartImg, CenterDiv, IconsDiv, InfoDiv, InfoMorDiv, Label, LastName, MainDiv, MuiLogoIcon, MuiMore, MuiTeamIcon, MuiUserIcon, Name, TableDiv, Text, Type } from './style'
 import MenuInfo from '../User/MenuInfo/Menu'
+import { useNavigate } from 'react-router-dom'
 
 //import img
 import Img from '../../images/bgc.jpg'
+import Man1 from '../../images/Man1.jpg'
+import Man2 from '../../images/Man2.jpg'
+import Man3 from '../../images/Man3.jpg'
+import Man4 from '../../images/Man4.jpg'
+import Man5 from '../../images/Man5.jpg'
+import Man6 from '../../images/Man6.jpg'
+import Man7 from '../../images/Man7.jpg'
+import Man8 from '../../images/Man8.jpg'
+
+
 
 const User = () => {
+
+  const navigation = useNavigate()
+
+  const Admin = ()=> {
+    navigation('/home')
+  }
+
+  const TeamGroup = ()=> {
+    navigation('/team')
+  }
+
   return (
     <MainDiv>
         <Barr>
           <BarrInDiv>
-            <IconsDiv> <MuiLogoIcon /> </IconsDiv>
+            <IconsDiv> <MuiLogoIcon onClick={Admin} /> </IconsDiv>
             <IconsDiv> <MuiUserIcon /> <Label>User Add</Label> </IconsDiv>
-            <IconsDiv> <MuiTeamIcon /> <Label>Team group</Label> </IconsDiv>
+            <IconsDiv> <MuiTeamIcon  onClick={TeamGroup} /> <Label onClick={TeamGroup} >Team group</Label> </IconsDiv>
           </BarrInDiv>
         </Barr>
 
@@ -23,7 +45,7 @@ const User = () => {
               <InfoMorDiv>
                 <MenuInfo />
               </InfoMorDiv>
-              <CartImg src={Img} alt='img' />
+              <CartImg src={Man1} alt='img' />
               <InfoDiv>
                 <Name>Jack</Name>
                 <LastName>Jhonov</LastName>
@@ -35,7 +57,7 @@ const User = () => {
               <InfoMorDiv>
                 <MenuInfo />
               </InfoMorDiv>
-              <CartImg src={Img} alt='img' />
+              <CartImg src={Man2} alt='img' />
               <InfoDiv>
                 <Name>Jack</Name>
                 <LastName>Jhonov</LastName>
@@ -47,7 +69,7 @@ const User = () => {
               <InfoMorDiv>
                 <MenuInfo />
               </InfoMorDiv>
-              <CartImg src={Img} alt='img' />
+              <CartImg src={Man3} alt='img' />
               <InfoDiv>
                 <Name>Jack</Name>
                 <LastName>Jhonov</LastName>
@@ -59,7 +81,7 @@ const User = () => {
               <InfoMorDiv>
                 <MenuInfo />
               </InfoMorDiv>
-              <CartImg src={Img} alt='img' />
+              <CartImg src={Man4} alt='img' />
               <InfoDiv>
                 <Name>Jack</Name>
                 <LastName>Jhonov</LastName>
@@ -71,7 +93,7 @@ const User = () => {
               <InfoMorDiv>
                 <MenuInfo />
               </InfoMorDiv>
-              <CartImg src={Img} alt='img' />
+              <CartImg src={Man5} alt='img' />
               <InfoDiv>
                 <Name>Jack</Name>
                 <LastName>Jhonov</LastName>
@@ -83,7 +105,7 @@ const User = () => {
               <InfoMorDiv>
                 <MenuInfo />
               </InfoMorDiv>
-              <CartImg src={Img} alt='img' />
+              <CartImg src={Man6} alt='img' />
               <InfoDiv>
                 <Name>Jack</Name>
                 <LastName>Jhonov</LastName>
@@ -95,7 +117,7 @@ const User = () => {
               <InfoMorDiv>
                 <MenuInfo />
               </InfoMorDiv>
-              <CartImg src={Img} alt='img' />
+              <CartImg src={Man7} alt='img' />
               <InfoDiv>
                 <Name>Jack</Name>
                 <LastName>Jhonov</LastName>
@@ -107,7 +129,7 @@ const User = () => {
               <InfoMorDiv>
                 <MenuInfo />
               </InfoMorDiv>
-              <CartImg src={Img} alt='img' />
+              <CartImg src={Man8} alt='img' />
               <InfoDiv>
                 <Name>Jack</Name>
                 <LastName>Jhonov</LastName>
