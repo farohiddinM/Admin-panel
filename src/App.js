@@ -16,9 +16,9 @@ function App() {
   const navigation = useNavigate()
   const Token = !!localStorage.getItem('user') 
 
-  useEffect(() => {
-    Token ? navigation('/home') : navigation('/')
-  }, [Token , navigation])
+  // useEffect(() => {
+  //   Token ? navigation('/home') : navigation('/')
+  // }, [Token , navigation])
   
   // console.log(Token);
 

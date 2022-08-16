@@ -1,11 +1,21 @@
-import React from 'react'
-import { Barr, BarrInDiv, CenterDIV, FormDiv, IconsDiv, ImgInp, Label, LinkInp, MainDiv, MuiLogoIcon, MuiTeamIcon, MuiUserIcon, NameInp, ParagrafInp, PostBtn, TableDiv,} from './style'
+import React, { useState } from 'react'
+import { Barr, BarrInDiv, CenterDIV, FormDiv, IconsDiv, ImgInp,EditimgMy, Label, LinkInp, MainDiv, MuiLogoIcon, MuiTeamIcon, MuiUserIcon, NameInp, ParagrafInp, PostBtn, TableDiv, ImgDiv, ChangImg, ThisImg, ChangeImg, MuiIconCloud, DefaultImg,} from './style'
 import { useNavigate } from 'react-router-dom'
-
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import ImgCloud from '../../images/Cloud.png'
 
 const Posting = () => {
+  const [Img, SettingImg] = useState('');
+  const [ImgtoBackend, setImgtoBackend] = useState(null)
+
+  const SEtImg = (e) => {
+    const rasm = e.target.files[0]
+    SettingImg(URL.createObjectURL(rasm))
+  }
 
   const navigation = useNavigate()
+
+ 
 
   const Nav = ()=> {
     navigation('/user')
@@ -31,11 +41,31 @@ const Posting = () => {
         <TableDiv>
           <CenterDIV>
             <FormDiv>
-              <ImgInp type='file' />
+
+
+
+            <EditimgMy>
+                {/* <ImgDiv>
+                <ThisImg src={Img} alt="Img" /> 
+
+                </ImgDiv> */}
+                <label for="img_upload" className="img__drop">
+                  <ThisImg src={Img.length > 0 ? Img : ImgCloud } alt="" />
+                <input
+                  type="file"
+                  onChange={(e) => SEtImg(e)}
+                  name=""
+                  hidden
+                  id="img_upload"
+                />
+                <ChangeImg>Uload <MuiIconCloud /> </ChangeImg>
+                </label>
+          </EditimgMy>
+            
               <NameInp variant='standard' label="Project Name" type='name' />
               <LinkInp variant='standard' label='Project Link' type='text' />
               <ParagrafInp placeholder='Paragraf Comment' />
-              <PostBtn variant='contained'>Postt</PostBtn>
+              <PostBtn variant='contained'>Add to Project</PostBtn>
             </FormDiv>
           </CenterDIV>
         </TableDiv>
@@ -44,3 +74,6 @@ const Posting = () => {
 }
 
 export default Posting
+
+
+{/* <ThisImg src={Img} alt="Img" />  */}

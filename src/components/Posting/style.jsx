@@ -5,9 +5,12 @@ import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 import GroupsIcon from '@mui/icons-material/Groups';
 import LogoDevIcon from '@mui/icons-material/LogoDev';
 import TextField from '@mui/material/TextField';
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+
 
 //Bgcimg
 import BgcImg from '../../images/Team.webp'
+import ImgCloud from '../../images/Cloud.png'
 import { Button } from "@mui/material";
 
 export const MainDiv = styled.div`
@@ -141,15 +144,10 @@ export const FormDiv = styled.div`
     box-sizing: border-box;
     box-shadow: 0px 0px 8px #606060;
     border-radius: 10px;
+    position: relative;
 `
 
-export const ImgInp = styled.input`
-    width:100%;
-    height: 250px;
-    border:none;
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
-`
+
 
 
 export const NameInp = styled(TextField)`
@@ -200,5 +198,43 @@ export const PostBtn = styled(Button)`
     width: 85% !important;
 `
 
+export const EditimgMy = styled.div`
+    width:100%;
+    height: 250px;
+    border:none;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+`
+
+export const ImgDiv = styled.div`
+    width: 100%;
+    height: 100%;
+`
+
+export const ThisImg = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+`
+export const ChangeImg = styled.p`
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1976D2;
+    border-radius: 6px;
+    color: white;
+    position: absolute;
+    right: 20px;
+    top: 275px;
+    cursor: pointer;
+    font-weight: 450;
+`
+
+export const MuiIconCloud = styled(CloudUploadIcon)`
+    color: white !important;
+    font-size: 20px !important;
+`
 
 
