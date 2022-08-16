@@ -6,7 +6,6 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 const options = [
   'Edit',
-  'Create',
   'Delete',
 ];
 

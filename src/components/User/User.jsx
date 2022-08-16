@@ -1,5 +1,5 @@
 import React from 'react'
-import { Barr, BarrInDiv, ButtonDiv, CardDiv, CartImg, CenterDiv, IconsDiv, InfoDiv, InfoMorDiv, Label, LastName, MainDiv, MuiLogoIcon, MuiMore, MuiTeamIcon, MuiUserIcon, Name, TableDiv, Text, Type } from './style'
+import { Barr, BarrInDiv, ButtonDiv, CardDiv, CartImg, CenterDiv, HeaderBtn, IconsDiv, InfoDiv, InfoMorDiv, Label, LastName, MainDiv, MuiLogoIcon, MuiMore, MuiTeamIcon, MuiUserIcon, Name, TableDiv, Text, Type } from './style'
 import MenuInfo from '../User/MenuInfo/Menu'
 import { useNavigate } from 'react-router-dom'
 
@@ -28,6 +28,11 @@ const User = () => {
     navigation('/team')
   }
 
+
+  const AddUser = ()=> {
+    navigation('/adduser')
+  }
+
   return (
     <MainDiv>
         <Barr>
@@ -38,10 +43,9 @@ const User = () => {
           </BarrInDiv>
         </Barr>
 
-        <TableDiv style={{position:'relative'}}>
-          <button style={{position: 'absolute' , top: "4vh" , left: '1.5%'}}>
-           Add User
-          </button>
+        <TableDiv>
+        <HeaderBtn onClick={AddUser} variant='contained'>Add to User</HeaderBtn>
+    
           <CenterDiv>
             
             <CardDiv>

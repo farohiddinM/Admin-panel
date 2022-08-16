@@ -5,6 +5,7 @@ import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 import GroupsIcon from '@mui/icons-material/Groups';
 import LogoDevIcon from '@mui/icons-material/LogoDev';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import { Button } from "@mui/material";
 
 //Bgcimg
 import BgcImg from '../../images/Team.webp'
@@ -117,9 +118,16 @@ export const TableDiv = styled.div`
     height: 100%;
     background-color: #a4c3b2;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     
+`
+
+export const HeaderBtn = styled(Button)`
+    width: 90% !important;
+    height: 50px !important;
+    /* margin-top: 10px !important ; */
 `
 
 export const CenterDiv = styled.div`

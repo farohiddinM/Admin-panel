@@ -43,7 +43,7 @@ const Team = () => {
         </Barr>
 
         <TableDiv>
-          <HeaderBtn variant='contained' onClick={Posting} >Posting</HeaderBtn>
+          <HeaderBtn variant='contained' onClick={Posting} >Add to Project</HeaderBtn>
           <CenterDiv>
 
             <CardDiv>
