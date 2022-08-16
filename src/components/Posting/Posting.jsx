@@ -35,7 +35,7 @@ const Posting = () => {
               <NameInp variant='standard' label="Project Name" type='name' />
               <LinkInp variant='standard' label='Project Link' type='text' />
               <ParagrafInp placeholder='Paragraf Comment' />
-              <PostBtn variant='contained'>Post</PostBtn>
+              <PostBtn variant='contained'>Postt</PostBtn>
             </FormDiv>
           </CenterDIV>
         </TableDiv>
