@@ -38,7 +38,10 @@ const User = () => {
           </BarrInDiv>
         </Barr>
 
-        <TableDiv>
+        <TableDiv style={{position:'relative'}}>
+          <button style={{position: 'absolute' , top: "4vh" , left: '1.5%'}}>
+           Add User
+          </button>
           <CenterDiv>
             
             <CardDiv>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { BrowserRouter as Router, Routes,Route } from 'react-router-dom';
+import { Routes,Route } from 'react-router-dom';
 import {useNavigate} from 'react-router-dom'
 import './App.css';
 
@@ -11,25 +11,30 @@ import Team from './components/Team/Team'
 import Posting from './components/Posting/Posting'
 
 function App() {
-  const [render, setrender] = useState(false)
+  // const [render, setrender] = useState(false)
 
   const navigation = useNavigate()
   const Token = !!localStorage.getItem('user') 
 
-  useEffect(() => {
-    Token ? navigation('/home') : navigation('/')
-  }, [render])
+  // useEffect(() => {
+  //   Token ? navigation('/home') : navigation('/')
+  // }, [Token , navigation])
   
-  console.log(Token);
+  // console.log(Token);
 
   return (
     <div className="App">
         <Routes>
           <Route path='/' element={<Login />} />
+<<<<<<< HEAD
           <Route path='/home' element={<Home Render={render} Setrender={setrender} />} />
           <Route path='/user' element={<User />} />
           <Route path='/team' element={<Team />} />
           <Route path='/posting' element={<Posting />} />
+=======
+          <Route path='home' element={<Home />} />
+          <Route path='user' element={<User />} />
+>>>>>>> b070649f3c0558365925467eedaba7647ae9e0c3
         </Routes>
     </div>
   );

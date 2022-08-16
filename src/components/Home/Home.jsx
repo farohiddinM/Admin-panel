@@ -9,7 +9,8 @@ const Home = ({Render,Setrender}) => {
 
   function Back() {
     localStorage.removeItem('user')
-    Setrender(!Render)
+    // Setrender(!Render)
+    navigation('/')
   }
 
   const Nav = ()=> {
@@ -37,7 +38,7 @@ const Home = ({Render,Setrender}) => {
           <ButtonDiv>
             <Button variant='text' onClick={Back} >Log out</Button>
           </ButtonDiv>
-          <Text>GeekZon-Team</Text>
+          <Text>GeekZone-Team</Text>
           <ButtonDiv></ButtonDiv>
         </TableDiv>
     </MainDiv>
