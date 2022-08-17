@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Barr, BarrInDiv, CenterDIV, FormDiv, IconsDiv, ImgInp,EditimgMy, Label, LinkInp, MainDiv, MuiLogoIcon, MuiTeamIcon, MuiUserIcon, NameInp, ParagrafInp, PostBtn, TableDiv, ImgDiv, ChangImg, ThisImg, ChangeImg, MuiIconCloud, DefaultImg, ChoosFileDiv, ChoosFileInp,} from './style'
 import { useNavigate } from 'react-router-dom'
-import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import MuiOption from '../AddUser/MuiOption/MuiOption'
 import ImgCloud from '../../images/Cloud.png'
 
 const AddUser = () => {
@@ -64,7 +64,7 @@ const AddUser = () => {
             
               <NameInp variant='standard' label="Name" type='name' />
               <LinkInp variant='standard' label='Last Name' type='text' />
-              <ParagrafInp placeholder='Description' />
+              <MuiOption />
 
               <ChoosFileDiv>
                 <p for="file">Choose resume file</p>

@@ -2,7 +2,7 @@ import React from 'react'
 import { Barr, BarrInDiv, ButtonDiv, CardDiv, CartImg, CenterDiv, HeaderBtn, IconsDiv, InfoDiv, InfoMorDiv, Label, LastName, MainDiv, MuiLogoIcon, MuiMore, MuiTeamIcon, MuiUserIcon, Name, TableDiv, Text, Type } from './style'
 import MenuInfo from '../User/MenuInfo/Menu'
 import { useNavigate } from 'react-router-dom'
-
+import { BasicModal , deleteModal } from './Modal/Modal'
 //import img
 import Img from '../../images/bgc.jpg'
 import Man1 from '../../images/Man1.jpg'
@@ -32,9 +32,11 @@ const User = () => {
   const AddUser = ()=> {
     navigation('/adduser')
   }
-
+  
   return (
     <MainDiv>
+      <BasicModal   />
+      <deleteModal   />
         <Barr>
           <BarrInDiv>
             <IconsDiv> <MuiLogoIcon onClick={Admin} /> </IconsDiv>

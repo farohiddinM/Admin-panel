@@ -3,11 +3,15 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import { useDispatch } from 'react-redux';
+import { openModal } from '../../../redux/editModalSlice/editModalSlice';
+import { deleteModalOpen } from '../../../redux/deleteModalSlice/deleteModalSlice';
+// const options = [
+//   'Edit',
+//   'Delete',
+// ];
 
-const options = [
-  'Edit',
-  'Delete',
-];
+
 
 const ITEM_HEIGHT = 48;
 
@@ -20,7 +24,7 @@ export default function LongMenu() {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
+  const dispatch = useDispatch()
   return (
     <div>
 
@@ -42,11 +46,20 @@ export default function LongMenu() {
           },
         }}
       >
-        {options.map((option) => (
-          <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
-            {option}
+       
+          <MenuItem  onClick={() => {
+            handleClose()
+            dispatch(openModal())
+          }}>
+           Edit
           </MenuItem>
-        ))}
+          <MenuItem   onClick={() => {
+            handleClose()
+            dispatch(deleteModalOpen())
+          }}>
+            Delete
+          </MenuItem>
+     
       </Menu>
     </div>
   );
