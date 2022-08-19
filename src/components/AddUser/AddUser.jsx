@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Barr, BarrInDiv, CenterDIV, FormDiv, IconsDiv, ImgInp, EditimgMy, Label, LinkInp, MainDiv, MuiLogoIcon, MuiTeamIcon, MuiUserIcon, NameInp, ParagrafInp, PostBtn, TableDiv, ImgDiv, ChangImg, ThisImg, ChangeImg, MuiIconCloud, DefaultImg, ChoosFileDiv, ChoosFileInp, } from './style'
+import { Barr, BarrInDiv, CenterDIV, FormDiv, IconsDiv, ImgInp, EditimgMy, Label, LinkInp, MainDiv, MuiLogoIcon, MuiTeamIcon, MuiUserIcon, NameInp, ParagrafInp, PostBtn, TableDiv, ImgDiv, ChangImg, ThisImg, ChangeImg, MuiIconCloud, DefaultImg, ChoosFileDiv, ChoosFileInp, ChooseFileDiv, MuiButton, ChooseFileInp, } from './style'
 import { useNavigate } from 'react-router-dom'
-import MuiOption from '../AddUser/MuiOption/MuiOption'
+// import MuiOption from '../AddUser/MuiOption/MuiOption'
 import ImgCloud from '../../images/Cloud.png'
 import axios from 'axios'
 import TextField from '@mui/material/TextField';
@@ -35,6 +35,13 @@ const AddUser = () => {
   const TeamGroup = () => {
     navigation('/team')
   }
+
+
+  function Myfile() {
+    document.getElementById("resumefile").click();
+  }
+
+
   const handleSubmit = (e) => {
     e.preventDefault()
     let data = {
@@ -58,25 +65,16 @@ const AddUser = () => {
 
 
             <EditimgMy>
-              {/* <ImgDiv>
-                <ThisImg src={Img} alt="Img" /> 
-
-                </ImgDiv> */}
-              <label for="img_upload" className="img__drop">
+              <label htmlFor='img_upload'>
                 <ThisImg src={Img.length > 0 ? Img : ImgCloud} alt="" />
-                <input
-                  type="file"
-                  onChange={(e) => SEtImg(e)}
-                  name=""
-                  hidden
-                  id="img_upload"
-                />
+                <input type="file" onChange={(e) => SEtImg(e)} name="" hidden id="img_upload" />
                 <ChangeImg>User img <MuiIconCloud /> </ChangeImg>
               </label>
             </EditimgMy>
 
             <NameInp variant='standard' label="Name" type='name' value={first_name} onChange={e => setFirst_name(e.target.value)} />
             <LinkInp variant='standard' label='Last Name' type='text' value={last_name} onChange={e => setLast_name(e.target.value)} />
+            
             <Stack spacing={1} sx={{ width: '90%' }}>
               <Autocomplete
                 {...defaultProps}
@@ -86,14 +84,14 @@ const AddUser = () => {
                   <TextField {...params} label="Skill" variant="standard" />
                 )}
               />
-
-
             </Stack>
 
-            <ChoosFileDiv>
-              <p for="file">Choose resume file</p>
-              <ChoosFileInp type="file" name="file" />
-            </ChoosFileDiv>
+            <ChooseFileDiv>
+              <MuiButton variant="contained" onClick={Myfile}>
+                Choose resume file
+              </MuiButton>
+              <ChooseFileInp type="file" id="resumefile" />
+            </ChooseFileDiv>
 
             <PostBtn type='submit' variant='contained'>Add to User</PostBtn>
           </FormDiv>
@@ -106,6 +104,6 @@ const AddUser = () => {
 export default AddUser
 
 const top100Films = [
-  { title: 'FrontEnd' },
-  { title: 'BackEnd'},
+  { title: 'FrontEnd', id:1 },
+  { title: 'BackEnd' , id :2},
 ];

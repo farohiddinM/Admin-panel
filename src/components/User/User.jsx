@@ -3,6 +3,7 @@ import { Barr, BarrInDiv, ButtonDiv, CardDiv, CartImg, CenterDiv, HeaderBtn, Ico
 import MenuInfo from '../User/MenuInfo/Menu'
 import { useNavigate } from 'react-router-dom'
 import { BasicModal , deleteModal } from './Modal/Modal'
+
 //import img
 import Img from '../../images/bgc.jpg'
 import Man1 from '../../images/Man1.jpg'

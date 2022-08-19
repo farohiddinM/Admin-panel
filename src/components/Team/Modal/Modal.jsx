@@ -1,13 +1,12 @@
 import * as React from "react";
-import {CencleBtn,ChangeImg,ChooseFileDiv,ChooseFileInp,CommandDiv,DelImg,DelName,EditimgMy,ImgDiv,ImgInp,LinkInp,ModalDiv,MuiButton,MuiIconCloud,MuiModalDiv,NameInp,SaaveBtn,ThisImg,} from "./style";
-import { useSelector, useDispatch } from "react-redux";
-import { closeModal } from "../../../redux/editModalSlice/editModalSlice";
-import { useState } from "react";
-import { deleteModalClose } from "../../../redux/deleteModalSlice/deleteModalSlice";
 import Modal from "@mui/material/Modal";
-import MuiOption from "../../AddUser/MuiOption/MuiOption";
+import {CencleBtn,ChangeImg,CommandDiv,DelImg,DelName,EditimgMy,LinkInp,ModalDiv,MuiIconCloud,NameInp,ParagrafInp,SaaveBtn,ThisImg,} from "./style";
+import { useSelector, useDispatch } from "react-redux";
+import { teamCloseModal } from "../../../redux/teamEditModalSlice/teamEditModalSlice";
+import { useState } from "react";
+import { teamDeleteClose } from "../../../redux/teamDeleteModalSlice/teamDeleteModalSlice";
 
-//img import
+//Img Import
 import ImgCloud from "../../../images/Cloud.png";
 
 const style = {
@@ -22,23 +21,21 @@ const style = {
   p: 4,
 };
 
-export const BasicModal = () => {
+const MyModal = () => {
   const dispatch = useDispatch();
  
-  const open = useSelector((state) => state.editActions.modalOpen);
-  const hello = useSelector((state) => state.deleteActions.deleteOpenModal);
-  
+  const teamOpen = useSelector((state) => state.teamEditeActions.modalOpen);
+  const teamDelete = useSelector((state) => state.teamDeleteActions.teamDeleteOpenModal);
+
+  //UseState
   const [Img, SettingImg] = useState("");
   const [ImgtoBackend, setImgtoBackend] = useState(null);
 
+  //Choose File Functions
   const SEtImg = (e) => {
     const rasm = e.target.files[0];
     SettingImg(URL.createObjectURL(rasm));
   };
-
-  function Myfile() {
-    document.getElementById("resumefile").click();
-  }
 
   return (
     <>
@@ -49,7 +46,7 @@ export const BasicModal = () => {
           alignItems: "center",
           border: "none",
         }}
-        open={open}
+        open={teamOpen}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
@@ -69,23 +66,21 @@ export const BasicModal = () => {
               </ChangeImg>
             </label>
           </EditimgMy>
-          <NameInp label="Name" variant="standard" />
-          <LinkInp label="Last Name" variant="standard" />
-          <MuiOption />
-          <ChooseFileDiv>
-            <MuiButton variant="contained" onClick={Myfile}>
-              Choose resume file
-            </MuiButton>
-            <ChooseFileInp type="file" id="resumefile" />
-          </ChooseFileDiv>
+
+          <NameInp label="Project Name" variant="standard" />
+          <LinkInp label="Project Link" variant="standard" />
+          <ParagrafInp placeholder='Paragraf Comment' />
+
           <CommandDiv>
-            <CencleBtn variant="contained" color="error" onClick={() => dispatch(closeModal())}>
+            <CencleBtn variant="contained" color="error" onClick={() => dispatch(teamCloseModal())} >
               Cencle
             </CencleBtn>
+
             <SaaveBtn variant="contained" color="success">
               Save
             </SaaveBtn>
           </CommandDiv>
+          
         </ModalDiv>
       </Modal>
 
@@ -98,7 +93,7 @@ export const BasicModal = () => {
             alignItems: "center",
             border: "none",
           }}
-          open={hello}
+          open={teamDelete}
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
         >
@@ -106,7 +101,7 @@ export const BasicModal = () => {
             <DelImg src={ImgCloud} />
             <DelName>Ikrom</DelName>
             <CommandDiv>
-              <CencleBtn variant="contained" color="success" onClick={() => dispatch(deleteModalClose())} > Cencle </CencleBtn>
+              <CencleBtn variant="contained" color="success" onClick={() => dispatch(teamDeleteClose())} > Cencle </CencleBtn>
               <SaaveBtn variant="contained" color="error"> Delete </SaaveBtn>
             </CommandDiv>
           </ModalDiv>
@@ -114,4 +109,4 @@ export const BasicModal = () => {
     </>
   );
 }
-
+export default MyModal;

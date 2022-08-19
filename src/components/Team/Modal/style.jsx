@@ -75,18 +75,36 @@ export const LinkInp = styled(TextField)`
     height: auto !important;
 `
 
-export const ChooseFileDiv = styled.div`
+export const ParagrafInp = styled.textarea`
     width: 90%;
-    height: 40px;
-`
+    height: 50px;
+    max-width: 90%;
+    max-height: 100px;
+    min-height: 50px;
+    min-width: 90%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid gray;
+    font-size: 16px;
+    color: black;
 
-export const MuiButton = styled(Button)`
-    width: 100% !important;
-    height: 100% !important;
-`
 
-export const ChooseFileInp = styled.input`
-    display: none !important ;
+
+
+    &:hover{
+        border-bottom: 2px solid black;
+    }
+
+
+    &::placeholder{
+        color: #0000009c;
+        font-weight: 500;
+    }
+
+    &:focus{
+        border-bottom: 1px solid blue;
+    }
 `
 
 export const CommandDiv = styled.div`

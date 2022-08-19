@@ -27,6 +27,7 @@ const Home = ({Render,Setrender}) => {
 
   return (
     <MainDiv>
+      
         <Barr>
           <BarrInDiv>
             <IconsDiv> <MuiLogoIcon onClick={Admin} /> </IconsDiv>
@@ -34,6 +35,7 @@ const Home = ({Render,Setrender}) => {
             <IconsDiv> <MuiTeamIcon onClick={TeamGroup} /> <Label onClick={TeamGroup} >Team group</Label> </IconsDiv>
           </BarrInDiv>
         </Barr>
+
         <TableDiv>
           <ButtonDiv>
             <Button variant='text' onClick={Back} >Log out</Button>
@@ -41,6 +43,7 @@ const Home = ({Render,Setrender}) => {
           <Text>GeekZone-Team</Text>
           <ButtonDiv></ButtonDiv>
         </TableDiv>
+
     </MainDiv>
   )
 }

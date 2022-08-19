@@ -1,7 +1,8 @@
 import React from 'react'
 import { Barr, BarrInDiv,CardDiv,CartImg,CenterDiv,HeaderBtn,IconsDiv, InfoDiv, InfoMorDiv, Label, LastName, MainDiv, MuiLogoIcon, MuiTeamIcon, MuiUserIcon, Name, TableDiv, Type, } from './styled'
 import { useNavigate } from 'react-router-dom'
-import MenuInfo from '../User/MenuInfo/Menu'
+import MenuInfo from '../Team/MenuInfo/MenuInfo'
+import MyModal from './Modal/Modal'
 
 //import img
 import Port1 from '../../images/Port1.jpg'
@@ -34,6 +35,7 @@ const Team = () => {
 
   return (
     <MainDiv>
+         <MyModal/>
         <Barr>
           <BarrInDiv>
             <IconsDiv> <MuiLogoIcon onClick={Admin} /> </IconsDiv>

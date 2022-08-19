@@ -23,7 +23,7 @@ export default function Playground() {
         id="clear-on-escape"
         clearOnEscape
         renderInput={(params) => (
-          <TextField {...params} label="clearOnEscape" variant="standard" />
+          <TextField {...params} label="Skill" variant="standard" />
         )}
       />
 
@@ -33,6 +33,6 @@ export default function Playground() {
 }
 
 const top100Films = [
-  { title: 'The Shawshank Redemption' },
-  { title: 'The Godfather', year: 1972 },
+  { title: 'Front-End' },
+  { title: 'Beck-End', year: 1972 },
 ];

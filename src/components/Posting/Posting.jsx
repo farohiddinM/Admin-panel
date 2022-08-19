@@ -31,41 +31,36 @@ const Posting = () => {
 
   return (
     <MainDiv>
-        <Barr>
-          <BarrInDiv>
-            <IconsDiv> <MuiLogoIcon onClick={Admin} /> </IconsDiv>
-            <IconsDiv> <MuiUserIcon onClick={Nav} /> <Label onClick={Nav} >User Add</Label> </IconsDiv>
-            <IconsDiv> <MuiTeamIcon onClick={TeamGroup} /> <Label onClick={TeamGroup} >Team group</Label> </IconsDiv>
-          </BarrInDiv>
-        </Barr>
+      <Barr>
+        <BarrInDiv>
+          <IconsDiv> <MuiLogoIcon onClick={Admin} /> </IconsDiv>
+          <IconsDiv> <MuiUserIcon onClick={Nav} /> <Label onClick={Nav} >User Add</Label> </IconsDiv>
+          <IconsDiv> <MuiTeamIcon onClick={TeamGroup} /> <Label onClick={TeamGroup} >Team group</Label> </IconsDiv>
+        </BarrInDiv>
+      </Barr>
+
         <TableDiv>
           <CenterDIV>
             <FormDiv>
 
-
-
-            <EditimgMy>
-                {/* <ImgDiv>
-                <ThisImg src={Img} alt="Img" /> 
-
-                </ImgDiv> */}
-                <label for="img_upload" className="img__drop">
+              <EditimgMy>
+                <label Htmlfor="img_upload" className="img__drop">
                   <ThisImg src={Img.length > 0 ? Img : ImgCloud } alt="" />
                 <input
                   type="file"
                   onChange={(e) => SEtImg(e)}
                   name=""
                   hidden
-                  id="img_upload"
-                />
+                  id="img_upload" />
                 <ChangeImg>Uload <MuiIconCloud /> </ChangeImg>
                 </label>
-          </EditimgMy>
+              </EditimgMy>
             
               <NameInp variant='standard' label="Project Name" type='name' />
               <LinkInp variant='standard' label='Project Link' type='text' />
               <ParagrafInp placeholder='Paragraf Comment' />
               <PostBtn variant='contained'>Add to Project</PostBtn>
+              
             </FormDiv>
           </CenterDIV>
         </TableDiv>

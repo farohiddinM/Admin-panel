@@ -4,18 +4,14 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { useDispatch } from 'react-redux';
-import { openModal } from '../../../redux/editModalSlice/editModalSlice';
-import { deleteModalOpen } from '../../../redux/deleteModalSlice/deleteModalSlice';
-// const options = [
-//   'Edit',
-//   'Delete',
-// ];
-
+import {teamOpenModal} from '../../../redux/teamEditModalSlice/teamEditModalSlice'
+import { teamDeleteOpen } from '../../../redux/teamDeleteModalSlice/teamDeleteModalSlice';
 
 
 const ITEM_HEIGHT = 48;
 
 export default function LongMenu() {
+  
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -24,7 +20,9 @@ export default function LongMenu() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
   const dispatch = useDispatch()
+
   return (
     <div>
 
@@ -49,14 +47,14 @@ export default function LongMenu() {
        
           <MenuItem  onClick={() => {
             handleClose()
-            dispatch(openModal())
+            dispatch(teamOpenModal())
           }}>
            Edit
           </MenuItem>
           
           <MenuItem   onClick={() => {
             handleClose()
-            dispatch(deleteModalOpen())
+            dispatch(teamDeleteOpen())
           }}>
             Delete
           </MenuItem>

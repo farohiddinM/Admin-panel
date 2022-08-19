@@ -238,23 +238,38 @@ export const MuiIconCloud = styled(CloudUploadIcon)`
 `
 
 
-export const ChoosFileDiv = styled.div`
-    width: 90%;
-    height: 45px;
-    border: 1px solid gray;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0px 0px 5px #606060;
-    border-radius: 6px;
+// export const ChoosFileDiv = styled.div`
+//     width: 90%;
+//     height: 45px;
+//     border: 1px solid gray;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     align-items: center;
+//     box-shadow: 0px 0px 5px #606060;
+//     border-radius: 6px;
 
+// `
+
+// export const ChoosFileInp = styled.input`
+//     ::-webkit-file-upload-button{
+//         background-color: #1976D2;
+//         border: none;
+//         color: white;
+//     }
+// `
+
+
+export const ChooseFileDiv = styled.div`
+    width: 90%;
+    height: 40px;
 `
 
-export const ChoosFileInp = styled.input`
-    ::-webkit-file-upload-button{
-        background-color: #1976D2;
-        border: none;
-        color: white;
-    }
+export const MuiButton = styled(Button)`
+    width: 100% !important;
+    height: 100% !important;
+`
+
+export const ChooseFileInp = styled.input`
+    display: none !important ;
 `
