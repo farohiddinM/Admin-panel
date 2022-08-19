@@ -17,9 +17,7 @@ export default function Playground() {
   // const [value, setValue] = React.useState(null);
 
   return (
-    <Stack spacing={1} sx={{ width:'90%'}}>
-      
-
+    <Stack spacing={1} sx={{ width: '90%' }}>
       <Autocomplete
         {...defaultProps}
         id="clear-on-escape"
