@@ -10,6 +10,7 @@ import User from './components/User/User'
 import Team from './components/Team/Team'
 import Posting from './components/Posting/Posting'
 import AddUser from './components/AddUser/AddUser'
+import UserPortifolio from './components/UserPortifolio/UserPortifolio'
 
 function App() {
   const [render, setrender] = useState(false)
@@ -32,6 +33,7 @@ function App() {
           <Route path='/team' element={<Team />} />
           <Route path='/posting' element={<Posting />} />
           <Route path='/adduser' element={<AddUser />} />
+          <Route path='/userportifolio' element={<UserPortifolio />} />
         </Routes>
     </div>
   );
