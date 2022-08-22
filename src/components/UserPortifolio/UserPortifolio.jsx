@@ -1,20 +1,24 @@
 import React, { useState } from 'react'
-import { Barr, BarrInDiv, BlurText, ButtonDiv, CardDiv, CartImg, CenterForm, ChangeImg, Conteyner, Direction, Div, EditimgMy, FormDiv, IconsDiv, InfoDiv, InfoMorDiv, Information, Label, LastName, LinkInp, MainDiv, MuiAddButton, MuiButton, MuiIconCloud, MuiLogoIcon, MuiTeamIcon, MuiUserIcon, Name, NameInp, ParagrafInp, PostBtn, TableDiv, Text, ThisImg, Type, UserAddPortifolioDiv, UserImg, UserInfoDiv, UserName } from './style'
+import { Barr, BarrInDiv, BlurText, ButtonDiv, CardDiv, CartImg, CenterForm, ChangeImg, Conteyner, Direction, Div, EditimgMy, FormDiv, IconsDiv, InfoDiv, InfoMorDiv, Information, Label, LastName, LinkInp, LogoIcon, MainDiv, MuiAddButton, MuiButton, MuiIconCloud, MuiLogoIcon, MuiTeamIcon, MuiUserIcon, Name, NameInp, ParagrafInp, PostBtn, TableDiv, Text, ThisImg, Type, UserAddPortifolioDiv, UserImg, UserInfoDiv, UserName } from './style'
 import { useNavigate } from 'react-router-dom'
+import MenuInfo from './MenuInfo/MenuInfo'
+import MyModal from './Modal/Modal'
 
-//import img
+// Img
 import UserImage from '../../images/Man4.jpg'
 import Port1 from '../../images/Port3.jpg'
-import MenuInfo from '../User/MenuInfo/Menu'
 import ImgCloud from '../../images/Cloud.png'
+import  GeekZone  from "../../images/GeekZone.jpg";
 
 
 //import Mui
 import ArrowForwardSharpIcon from '@mui/icons-material/ArrowForwardSharp';
 
+
 const UserPortifolio = () => {
   const navigation = useNavigate()
-
+  
+  const [work, setWork] = useState(false)
 
   //useState
   const [True, setTrue] = useState(false)
@@ -43,16 +47,22 @@ const UserPortifolio = () => {
 
   //Button Add to project function
   function Change() {
-    
+    if(work){
+      setWork(false)
+
+    }else{
+      setWork(true)
+    }
+
   }
 
 
   return (
     <MainDiv>
-      
+      <MyModal />
         <Barr>
           <BarrInDiv>
-            <IconsDiv> <MuiLogoIcon onClick={Admin} /> </IconsDiv>
+            <IconsDiv> <LogoIcon src={GeekZone} onClick={Admin} /> </IconsDiv>
             <IconsDiv> <MuiUserIcon onClick={Nav} /> <Label onClick={Nav} >User Add</Label> </IconsDiv>
             <IconsDiv> <MuiTeamIcon onClick={TeamGroup} /> <Label onClick={TeamGroup} >Team group</Label> </IconsDiv>
           </BarrInDiv>
@@ -72,7 +82,7 @@ const UserPortifolio = () => {
           <UserAddPortifolioDiv>
             <MuiAddButton variant='contained' onClick={Change} >Add to Project</MuiAddButton>
             <Conteyner>
-          <Div>
+          <Div style={{display: `${work? "none": ""}`}}>
             <CardDiv>
               <InfoMorDiv>
                 <MenuInfo />
@@ -123,7 +133,7 @@ const UserPortifolio = () => {
           </Div>
 {/*========= Add to project ================================== */}
 
-<FormDiv>
+<FormDiv style={{display: `${work?"":'none'}`}}>
 
 <EditimgMy>
   <label Htmlfor="img_upload" className="img__drop">

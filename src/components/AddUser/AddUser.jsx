@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Barr, BarrInDiv, CenterDIV, FormDiv, IconsDiv, ImgInp, EditimgMy, Label, LinkInp, MainDiv, MuiLogoIcon, MuiTeamIcon, MuiUserIcon, NameInp, ParagrafInp, PostBtn, TableDiv, ImgDiv, ChangImg, ThisImg, ChangeImg, MuiIconCloud, DefaultImg, ChoosFileDiv, ChoosFileInp, ChooseFileDiv, MuiButton, ChooseFileInp, } from './style'
+import { Barr, BarrInDiv, CenterDIV, FormDiv, IconsDiv, ImgInp, EditimgMy, Label, LinkInp, MainDiv, MuiLogoIcon, MuiTeamIcon, MuiUserIcon, NameInp, ParagrafInp, PostBtn, TableDiv, ImgDiv, ChangImg, ThisImg, ChangeImg, MuiIconCloud, DefaultImg, ChoosFileDiv, ChoosFileInp, ChooseFileDiv, MuiButton, ChooseFileInp, CommandDiv, MuiCencleBtn, MuiAddToUserBtn, LogoIcon, } from './style'
 import { useNavigate } from 'react-router-dom'
 // import MuiOption from '../AddUser/MuiOption/MuiOption'
 import ImgCloud from '../../images/Cloud.png'
@@ -7,6 +7,11 @@ import axios from 'axios'
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import Stack from '@mui/material/Stack';
+
+// Img import
+import  GeekZone  from "../../images/GeekZone.jpg";
+
+
 const AddUser = () => {
   const [Img, SettingImg] = useState('');
   const [ImgtoBackend, setImgtoBackend] = useState(null)
@@ -53,7 +58,7 @@ const AddUser = () => {
     <MainDiv>
       <Barr>
         <BarrInDiv>
-          <IconsDiv> <MuiLogoIcon onClick={Admin} /> </IconsDiv>
+          <IconsDiv> <LogoIcon src={GeekZone} onClick={Admin} /> </IconsDiv>
           <IconsDiv> <MuiUserIcon onClick={Nav} /> <Label onClick={Nav} >User Add</Label> </IconsDiv>
           <IconsDiv> <MuiTeamIcon onClick={TeamGroup} /> <Label onClick={TeamGroup} >Team group</Label> </IconsDiv>
         </BarrInDiv>
@@ -93,7 +98,11 @@ const AddUser = () => {
               <ChooseFileInp type="file" id="resumefile" />
             </ChooseFileDiv>
 
-            <PostBtn type='submit' variant='contained'>Add to User</PostBtn>
+            <CommandDiv>
+              <MuiCencleBtn onClick={Nav} type='submit' variant='contained' color='error'>Cencle</MuiCencleBtn>
+              <MuiAddToUserBtn type='submit' variant='contained' color='success'>Add to User</MuiAddToUserBtn>
+            </CommandDiv>
+
           </FormDiv>
         </CenterDIV>
       </TableDiv>
@@ -107,3 +116,4 @@ const top100Films = [
   { title: 'FrontEnd', id:1 },
   { title: 'BackEnd' , id :2},
 ];
+{/* <PostBtn type='submit' variant='contained'>Add to User</PostBtn> */}

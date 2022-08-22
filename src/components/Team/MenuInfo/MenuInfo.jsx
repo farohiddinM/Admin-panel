@@ -26,7 +26,7 @@ export default function LongMenu() {
   return (
     <div>
 
-        <MoreHorizIcon style={{color:'white'}} onClick={handleClick}/>
+        <MoreHorizIcon style={{color:'white',cursor:'pointer'}} onClick={handleClick}/>
 
       <Menu
         id="long-menu"

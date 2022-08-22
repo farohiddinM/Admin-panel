@@ -48,9 +48,11 @@ export const Label = styled.label`
     color: white;
 `
 
-export const MuiLogoIcon = styled(LogoDevIcon)`
-    color: gray !important;
-    font-size: 35px !important;
+export const LogoIcon = styled.img`
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
 `
 
 export const MuiUserIcon = styled(PersonAddAltIcon)`
@@ -90,7 +92,7 @@ export const Barr = styled.div`
     }
     }
 
-    &:hover ${MuiLogoIcon}{
+    &:hover ${LogoIcon}{
         font-size: 50px !important;
     }
     
