@@ -53,9 +53,10 @@ export const Label = styled.label`
     color: white;
 `
 
-export const MuiLogoIcon = styled(LogoDevIcon)`
-    color: gray !important;
-    font-size: 35px !important;
+export const LogoIcon = styled.img`
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
 `
 
 export const MuiUserIcon = styled(PersonAddAltIcon)`
@@ -95,7 +96,7 @@ export const Barr = styled.div`
     }
     }
 
-    &:hover ${MuiLogoIcon}{
+    &:hover ${LogoIcon}{
         font-size: 50px !important;
     }
     
@@ -194,8 +195,20 @@ export const ParagrafInp = styled.textarea`
     }
 `
 
-export const PostBtn = styled(Button)`
-    width: 85% !important;
+export const CommandDiv = styled.div`
+    width:90%;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+`
+
+export const MuiCencleBtn = styled(Button)`
+    width: 45% !important;
+`
+
+export const MuiAddToUserBtn = styled(Button)`
+    width: 45% !important;
 `
 
 export const EditimgMy = styled.div`

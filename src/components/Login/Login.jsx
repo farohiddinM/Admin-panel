@@ -39,9 +39,9 @@ const Login = () => {
   return (
     <MainDiv>
       <CenterDiv>
-        <Title>Asalomu Alekum!</Title>
+        <Title>Peace be upon you</Title>
         <FormDiv onSubmit={handleSubmit}>
-          <Text>Hush kelibsiz</Text>
+          <Text>Welcome !</Text>
           <UsernameInp value={Username} onChange={(e)=>setUsername(e.target.value)} placeholder='Username' type='text' />
           <PasswordInp value={Password} onChange={(e)=>setPassword(e.target.value)} placeholder='Password' type='password'/>
           <MuiButton type='submit' variant='contained'>Sign in</MuiButton>

@@ -1,14 +1,16 @@
 import React from 'react'
-import { Barr, BarrInDiv,CardDiv,CartImg,CenterDiv,HeaderBtn,IconsDiv, InfoDiv, InfoMorDiv, Label, LastName, MainDiv, MuiLogoIcon, MuiTeamIcon, MuiUserIcon, Name, TableDiv, Type, } from './styled'
+import { Barr, BarrInDiv,CardDiv,CartImg,CenterDiv,HeaderBtn,IconsDiv, InfoDiv, InfoMorDiv, Label, LastName, LogoIcon, MainDiv, MuiLogoIcon, MuiTeamIcon, MuiUserIcon, Name, TableDiv, Type, } from './styled'
 import { useNavigate } from 'react-router-dom'
 import MenuInfo from '../Team/MenuInfo/MenuInfo'
 import MyModal from './Modal/Modal'
 
-//import img
+// Img Import
 import Port1 from '../../images/Port1.jpg'
 import Port2 from '../../images/Port2.jpg'
 import Port3 from '../../images/Port3.jpg'
 import Port4 from '../../images/Port4.jpg'
+import  GeekZone  from "../../images/GeekZone.jpg";
+
 
 
 
@@ -38,7 +40,7 @@ const Team = () => {
          <MyModal/>
         <Barr>
           <BarrInDiv>
-            <IconsDiv> <MuiLogoIcon onClick={Admin} /> </IconsDiv>
+            <IconsDiv> <LogoIcon src={GeekZone} onClick={Admin} /> </IconsDiv>
             <IconsDiv> <MuiUserIcon onClick={Nav} /> <Label onClick={Nav} >User Add</Label> </IconsDiv>
             <IconsDiv> <MuiTeamIcon onClick={TeamGroup} /> <Label onClick={TeamGroup} >Team group</Label> </IconsDiv>
           </BarrInDiv>

@@ -1,10 +1,10 @@
 import React from 'react'
-import { Barr, BarrInDiv, ButtonDiv, CardDiv, CartImg, CenterDiv, HeaderBtn, IconsDiv, InfoDiv, InfoMorDiv, Label, LastName, MainDiv, MuiLogoIcon, MuiMore, MuiTeamIcon, MuiUserIcon, Name, TableDiv, Text, Type } from './style'
+import { Barr, BarrInDiv, ButtonDiv, CardDiv, CartImg, CenterDiv, HeaderBtn, IconsDiv, InfoDiv, InfoMorDiv, Label, LastName, LogoIcon, MainDiv, MuiLogoIcon, MuiMore, MuiTeamIcon, MuiUserIcon, Name, TableDiv, Text, Type } from './style'
 import MenuInfo from '../User/MenuInfo/Menu'
 import { useNavigate } from 'react-router-dom'
 import { BasicModal , deleteModal } from './Modal/Modal'
 
-//import img
+//Img Import
 import Img from '../../images/bgc.jpg'
 import Man1 from '../../images/Man1.jpg'
 import Man2 from '../../images/Man2.jpg'
@@ -14,6 +14,8 @@ import Man5 from '../../images/Man5.jpg'
 import Man6 from '../../images/Man6.jpg'
 import Man7 from '../../images/Man7.jpg'
 import Man8 from '../../images/Man8.jpg'
+import  GeekZone  from "../../images/GeekZone.jpg";
+
 
 
 
@@ -33,6 +35,10 @@ const User = () => {
   const AddUser = ()=> {
     navigation('/adduser')
   }
+
+  const UserPortifolio = ()=>{
+    navigation('/userPortifolio')
+  }
   
   return (
     <MainDiv>
@@ -40,7 +46,7 @@ const User = () => {
       <deleteModal   />
         <Barr>
           <BarrInDiv>
-            <IconsDiv> <MuiLogoIcon onClick={Admin} /> </IconsDiv>
+            <IconsDiv> <LogoIcon src={GeekZone} onClick={Admin} /> </IconsDiv>
             <IconsDiv> <MuiUserIcon /> <Label>User Add</Label> </IconsDiv>
             <IconsDiv> <MuiTeamIcon  onClick={TeamGroup} /> <Label onClick={TeamGroup} >Team group</Label> </IconsDiv>
           </BarrInDiv>
@@ -51,7 +57,7 @@ const User = () => {
     
           <CenterDiv>
             
-            <CardDiv>
+            <CardDiv onClick={UserPortifolio}>
               <InfoMorDiv>
                 <MenuInfo />
               </InfoMorDiv>
@@ -63,7 +69,7 @@ const User = () => {
               </InfoDiv>
             </CardDiv>
 
-            <CardDiv>
+            <CardDiv  onClick={UserPortifolio}>
               <InfoMorDiv>
                 <MenuInfo />
               </InfoMorDiv>
@@ -75,7 +81,7 @@ const User = () => {
               </InfoDiv>
             </CardDiv>
 
-            <CardDiv>
+            <CardDiv  onClick={UserPortifolio}>
               <InfoMorDiv>
                 <MenuInfo />
               </InfoMorDiv>
@@ -87,7 +93,7 @@ const User = () => {
               </InfoDiv>
             </CardDiv>
 
-            <CardDiv>
+            <CardDiv  onClick={UserPortifolio}>
               <InfoMorDiv>
                 <MenuInfo />
               </InfoMorDiv>
@@ -99,7 +105,7 @@ const User = () => {
               </InfoDiv>
             </CardDiv>
 
-            <CardDiv>
+            <CardDiv  onClick={UserPortifolio}>
               <InfoMorDiv>
                 <MenuInfo />
               </InfoMorDiv>
@@ -111,7 +117,7 @@ const User = () => {
               </InfoDiv>
             </CardDiv>
 
-            <CardDiv>
+            <CardDiv  onClick={UserPortifolio}>
               <InfoMorDiv>
                 <MenuInfo />
               </InfoMorDiv>
@@ -123,7 +129,7 @@ const User = () => {
               </InfoDiv>
             </CardDiv>
 
-            <CardDiv>
+            <CardDiv  onClick={UserPortifolio}>
               <InfoMorDiv>
                 <MenuInfo />
               </InfoMorDiv>
@@ -135,7 +141,7 @@ const User = () => {
               </InfoDiv>
             </CardDiv>
 
-            <CardDiv>
+            <CardDiv  onClick={UserPortifolio}>
               <InfoMorDiv>
                 <MenuInfo />
               </InfoMorDiv>

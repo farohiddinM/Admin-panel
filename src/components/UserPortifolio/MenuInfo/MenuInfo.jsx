@@ -1,21 +1,15 @@
 import * as React from 'react';
-import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';   // user
 import { useDispatch } from 'react-redux';
-import { openModal } from '../../../redux/editModalSlice/editModalSlice';
-import { deleteModalOpen } from '../../../redux/deleteModalSlice/deleteModalSlice';
-// const options = [
-//   'Edit',
-//   'Delete',
-// ];
-
-
+import { userOpenModal } from '../../../redux/userEditeSlice/userEditeSlice';
+import { userDeleteOpen } from '../../../redux/userDeleteSlice/userDeleteSLice';
 
 const ITEM_HEIGHT = 48;
 
 export default function LongMenu() {
+  
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -24,7 +18,9 @@ export default function LongMenu() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
   const dispatch = useDispatch()
+
   return (
     <div>
 
@@ -49,14 +45,14 @@ export default function LongMenu() {
        
           <MenuItem  onClick={() => {
             handleClose()
-            dispatch(openModal())
+            dispatch(userOpenModal())
           }}>
            Edit
           </MenuItem>
           
           <MenuItem   onClick={() => {
             handleClose()
-            dispatch(deleteModalOpen())
+            dispatch(userDeleteOpen())
           }}>
             Delete
           </MenuItem>

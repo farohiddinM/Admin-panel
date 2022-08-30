@@ -1,7 +1,10 @@
 import { Button } from '@mui/material'
 import React, { useState } from 'react'
-import { Barr, BarrInDiv, BlurText, ButtonDiv, IconsDiv, Label, MainDiv, MuiLogoIcon, MuiTeamIcon, MuiUserIcon, TableDiv, Text } from './style'
+import { Barr, BarrInDiv, BlurText, ButtonDiv, IconsDiv, Label, LogoIcon, MainDiv, MuiLogoIcon, MuiTeamIcon, MuiUserIcon, TableDiv, Text } from './style'
 import { useNavigate } from 'react-router-dom'
+
+// Img import
+import  GeekZone  from "../../images/GeekZone.jpg";
 
 const Home = ({Render,Setrender}) => {
 
@@ -30,7 +33,7 @@ const Home = ({Render,Setrender}) => {
       
         <Barr>
           <BarrInDiv>
-            <IconsDiv> <MuiLogoIcon onClick={Admin} /> </IconsDiv>
+            <IconsDiv> <LogoIcon src={GeekZone} onClick={Admin} /> </IconsDiv>
             <IconsDiv> <MuiUserIcon onClick={Nav} /> <Label onClick={Nav} >User Add</Label> </IconsDiv>
             <IconsDiv> <MuiTeamIcon onClick={TeamGroup} /> <Label onClick={TeamGroup} >Team group</Label> </IconsDiv>
           </BarrInDiv>
