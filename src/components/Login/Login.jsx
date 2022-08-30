@@ -1,18 +1,20 @@
-import { Password } from '@mui/icons-material'
+// import { Password } from '@mui/icons-material'
 import React, { useState } from 'react'
 import { CenterDiv, ForgotText, FormDiv, MainDiv, MuiButton,PasswordInp, Text, Title, UsernameInp } from './style'
-import Data from '../../data/auth'
+// import Data from '../../data/auth'
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
-// const url = process.env.REACT_APP_TEAM
-
+import {useDispatch} from 'react-redux'
+import { fetchLogin } from '../../redux/loginSlice/loginSlice'
+const url = process.env.REACT_APP_API
+// const url = process.env.REACT_APP_REST_API
 const Login = () => {
 
   //useState
   const [Username, setUsername] = useState('')
   const [Password, setPassword] = useState('')
   const navigation = useNavigate()
-
+  const dispatch = useDispatch()
 
  async function handleSubmit (e) {
     e.preventDefault()
@@ -22,11 +24,7 @@ const Login = () => {
     }
    
     if (Username.length > 0 && Password.length > 0) {
-      const response = await axios.post('http://127.0.0.1:8000/api/v1/login/' , datas)
-      const data = await response.data
-      console.log(data);
-      localStorage.setItem('user' , data)
-      // localStorage.setItem('pass' , Password)
+       dispatch(fetchLogin(datas))
       navigation('/home')
     }else{
       alert('xato') 
