@@ -82,7 +82,7 @@ const UserPortifolio = () => {
           <UserAddPortifolioDiv>
             <MuiAddButton variant='contained' onClick={Change} >Add to Project</MuiAddButton>
             <Conteyner>
-          <Div style={{display: `${work? "none": ""}`}}>
+          <Div style={{display: `${work? "none" : ""}`}}>
             <CardDiv>
               <InfoMorDiv>
                 <MenuInfo />

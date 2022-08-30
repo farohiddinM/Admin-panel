@@ -57,11 +57,11 @@ const User = () => {
     
           <CenterDiv>
             
-            <CardDiv onClick={UserPortifolio}>
+            <CardDiv>
               <InfoMorDiv>
                 <MenuInfo />
               </InfoMorDiv>
-              <CartImg src={Man1} alt='img' />
+              <CartImg src={Man1} alt='img' onClick={UserPortifolio}  />
               <InfoDiv>
                 <Name>Jack</Name>
                 <LastName>Jhonov</LastName>
