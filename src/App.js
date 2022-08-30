@@ -14,15 +14,7 @@ import UserPortifolio from './components/UserPortifolio/UserPortifolio'
 
 function App() {
   const [render, setrender] = useState(false)
-
-  const navigation = useNavigate()
-  const Token = !!localStorage.getItem('user') 
-
-  // useEffect(() => {
-  //   Token ? navigation('/home') : navigation('/')
-  // }, [Token , navigation])
-  
-  // console.log(Token);
+ 
 
   return (
     <div className="App">

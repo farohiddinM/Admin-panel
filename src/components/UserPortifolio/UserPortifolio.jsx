@@ -136,7 +136,7 @@ const UserPortifolio = () => {
 <FormDiv style={{display: `${work?"":'none'}`}}>
 
 <EditimgMy>
-  <label Htmlfor="img_upload" className="img__drop">
+  <label htmlFor="img_upload" className="img__drop">
     <ThisImg src={Img.length > 0 ? Img : ImgCloud } alt="" />
   <input
     type="file"

@@ -5,6 +5,10 @@ import deleteModalSlice from './deleteModalSlice/deleteModalSlice';
 // team
 import teamEditModalSlice from './teamEditModalSlice/teamEditModalSlice';
 import teamDeleteModalSlice from './teamDeleteModalSlice/teamDeleteModalSlice';
+//userPortifolio
+import userEditeSlice from './userEditeSlice/userEditeSlice';
+import userDeleteSLice from './userDeleteSlice/userDeleteSLice';
+
 // login
 import loginSlice from './loginSlice/loginSlice';
 const store = configureStore({
@@ -13,6 +17,8 @@ const store = configureStore({
         deleteActions: deleteModalSlice,
         teamEditeActions:teamEditModalSlice,
         teamDeleteActions:teamDeleteModalSlice,
+        userEditeActions:userEditeSlice,
+        userDeleteActions:userDeleteSLice,
         loginActions: loginSlice
     }
 })

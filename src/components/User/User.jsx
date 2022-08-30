@@ -37,7 +37,7 @@ const User = () => {
   }
 
   const UserPortifolio = ()=>{
-    navigation('/userPortifolio')
+    navigation('/userportifolio')
   }
   
   return (
@@ -69,11 +69,11 @@ const User = () => {
               </InfoDiv>
             </CardDiv>
 
-            <CardDiv  onClick={UserPortifolio}>
+            <CardDiv>
               <InfoMorDiv>
                 <MenuInfo />
               </InfoMorDiv>
-              <CartImg src={Man2} alt='img' />
+              <CartImg src={Man2} alt='img' onClick={UserPortifolio} />
               <InfoDiv>
                 <Name>Jack</Name>
                 <LastName>Jhonov</LastName>
@@ -81,11 +81,11 @@ const User = () => {
               </InfoDiv>
             </CardDiv>
 
-            <CardDiv  onClick={UserPortifolio}>
+            <CardDiv>
               <InfoMorDiv>
                 <MenuInfo />
               </InfoMorDiv>
-              <CartImg src={Man3} alt='img' />
+              <CartImg src={Man3} alt='img' onClick={UserPortifolio} />
               <InfoDiv>
                 <Name>Jack</Name>
                 <LastName>Jhonov</LastName>
@@ -93,11 +93,11 @@ const User = () => {
               </InfoDiv>
             </CardDiv>
 
-            <CardDiv  onClick={UserPortifolio}>
+            <CardDiv>
               <InfoMorDiv>
                 <MenuInfo />
               </InfoMorDiv>
-              <CartImg src={Man4} alt='img' />
+              <CartImg src={Man4} alt='img' onClick={UserPortifolio} />
               <InfoDiv>
                 <Name>Jack</Name>
                 <LastName>Jhonov</LastName>
@@ -105,11 +105,11 @@ const User = () => {
               </InfoDiv>
             </CardDiv>
 
-            <CardDiv  onClick={UserPortifolio}>
+            <CardDiv >
               <InfoMorDiv>
                 <MenuInfo />
               </InfoMorDiv>
-              <CartImg src={Man5} alt='img' />
+              <CartImg src={Man5} alt='img' onClick={UserPortifolio} />
               <InfoDiv>
                 <Name>Jack</Name>
                 <LastName>Jhonov</LastName>
@@ -117,11 +117,11 @@ const User = () => {
               </InfoDiv>
             </CardDiv>
 
-            <CardDiv  onClick={UserPortifolio}>
+            <CardDiv >
               <InfoMorDiv>
                 <MenuInfo />
               </InfoMorDiv>
-              <CartImg src={Man6} alt='img' />
+              <CartImg src={Man6} alt='img' onClick={UserPortifolio} />
               <InfoDiv>
                 <Name>Jack</Name>
                 <LastName>Jhonov</LastName>
@@ -129,11 +129,11 @@ const User = () => {
               </InfoDiv>
             </CardDiv>
 
-            <CardDiv  onClick={UserPortifolio}>
+            <CardDiv>
               <InfoMorDiv>
                 <MenuInfo />
               </InfoMorDiv>
-              <CartImg src={Man7} alt='img' />
+              <CartImg src={Man7} alt='img' onClick={UserPortifolio} />
               <InfoDiv>
                 <Name>Jack</Name>
                 <LastName>Jhonov</LastName>
@@ -141,11 +141,11 @@ const User = () => {
               </InfoDiv>
             </CardDiv>
 
-            <CardDiv  onClick={UserPortifolio}>
+            <CardDiv>
               <InfoMorDiv>
                 <MenuInfo />
               </InfoMorDiv>
-              <CartImg src={Man8} alt='img' />
+              <CartImg src={Man8} alt='img' onClick={UserPortifolio} />
               <InfoDiv>
                 <Name>Jack</Name>
                 <LastName>Jhonov</LastName>

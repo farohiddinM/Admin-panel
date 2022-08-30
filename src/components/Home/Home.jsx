@@ -2,17 +2,18 @@ import { Button } from '@mui/material'
 import React, { useState } from 'react'
 import { Barr, BarrInDiv, BlurText, ButtonDiv, IconsDiv, Label, LogoIcon, MainDiv, MuiLogoIcon, MuiTeamIcon, MuiUserIcon, TableDiv, Text } from './style'
 import { useNavigate } from 'react-router-dom'
-
+import { logOut } from '../../redux/loginSlice/loginSlice'
+import {useDispatch} from 'react-redux'
 // Img import
 import  GeekZone  from "../../images/GeekZone.jpg";
 
 const Home = ({Render,Setrender}) => {
-
+  const dispatch = useDispatch()
   const navigation = useNavigate()
 
   function Back() {
     localStorage.removeItem('user')
-    // Setrender(!Render)
+    dispatch(logOut())
     navigation('/')
   }
 
