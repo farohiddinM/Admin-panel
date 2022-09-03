@@ -17,9 +17,13 @@ const AddUser = () => {
   // const [ImgtoBackend, setImgtoBackend] = useState(null) 
   const [first_name, setFirst_name] = useState('')
   const [last_name, setLast_name] = useState('')
+<<<<<<< HEAD
   const [imgFech, setImgFech] = useState('')
   const [resume, setResume] = useState('')
   const [type , setType] = useState('')
+=======
+  
+>>>>>>> 1b7a5580129ab279044bf0bf5d93db08845a928c
   const SEtImg = (e) => {
     const rasm = e.target.files[0]
     setImgFech(rasm)
