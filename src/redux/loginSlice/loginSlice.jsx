@@ -31,7 +31,7 @@ const loginSlice = createSlice({
         state.loading = false
         state.eneter = true
         state.status = 'success'
-        console.log(action.payload);
+        localStorage.setItem('token' , JSON.stringify(action.payload))
         localStorage.setItem('user' , JSON.stringify(state.eneter))  
      }
     }

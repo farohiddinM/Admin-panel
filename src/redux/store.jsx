@@ -11,6 +11,7 @@ import userDeleteSLice from './userDeleteSlice/userDeleteSLice';
 
 // login
 import loginSlice from './loginSlice/loginSlice';
+import addUserSlice from './addUserSlice/addUserSlice';
 const store = configureStore({
     reducer: {
         editActions: editModalSlice,
@@ -19,7 +20,8 @@ const store = configureStore({
         teamDeleteActions:teamDeleteModalSlice,
         userEditeActions:userEditeSlice,
         userDeleteActions:userDeleteSLice,
-        loginActions: loginSlice
+        loginActions: loginSlice,
+        addUserActions:addUserSlice 
     }
 })
 

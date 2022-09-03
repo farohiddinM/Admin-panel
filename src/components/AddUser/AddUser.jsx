@@ -4,30 +4,31 @@ import { useNavigate } from 'react-router-dom'
 // import MuiOption from '../AddUser/MuiOption/MuiOption'
 import ImgCloud from '../../images/Cloud.png'
 import axios from 'axios'
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
-import Stack from '@mui/material/Stack';
-
+import {MenuItem ,Select ,InputLabel , FormControl} from '@mui/material'
+import {useDispatch , useSelector} from 'react-redux'
 // Img import
-import  GeekZone  from "../../images/GeekZone.jpg";
+import GeekZone from "../../images/GeekZone.jpg";
+import { useEffect } from 'react'
+import { fetchAddUserTypeList } from '../../redux/addUserSlice/addUserSlice'
 
 
 const AddUser = () => {
   const [Img, SettingImg] = useState('');
-  const [ImgtoBackend, setImgtoBackend] = useState(null)
+  // const [ImgtoBackend, setImgtoBackend] = useState(null) 
   const [first_name, setFirst_name] = useState('')
   const [last_name, setLast_name] = useState('')
+  const [imgFech, setImgFech] = useState('')
+  const [resume, setResume] = useState('')
+  const [type , setType] = useState('')
   const SEtImg = (e) => {
     const rasm = e.target.files[0]
+    setImgFech(rasm)
     SettingImg(URL.createObjectURL(rasm))
   }
-
+  const {typeList} = useSelector(state => state.addUserActions)
+  const dispatch  = useDispatch()
   const navigation = useNavigate()
 
-  const defaultProps = {
-    options: top100Films,
-    getOptionLabel: (option) => option.title,
-  };
 
   const Nav = () => {
     navigation('/user')
@@ -49,11 +50,29 @@ const AddUser = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    let data = {
-      // first_name: 
-    }
-    axios.post('http://127.0.0.1:8000/user-create/', data)
+    let formData = new FormData()
+    formData.append('image', imgFech, imgFech.name)
+    formData.append('first_name', first_name)
+    formData.append('last_name', last_name)
+    formData.append('resume', resume, resume.name)
+    formData.append('type', parseInt(type))
+    let token = JSON.parse(localStorage.getItem('token'))
+    axios.post('http://127.0.0.1:8000/user-create/', formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        "Authorization": `Bearer ${token.key} `,
+      }
+    })
+    setFirst_name('')
+    setLast_name('')
+    setResume('')
+    setImgFech('')
   }
+ 
+  useEffect(() => {
+    dispatch(fetchAddUserTypeList())
+  } , [dispatch])
+
   return (
     <MainDiv>
       <Barr>
@@ -66,9 +85,6 @@ const AddUser = () => {
       <TableDiv>
         <CenterDIV>
           <FormDiv onSubmit={handleSubmit}>
-
-
-
             <EditimgMy>
               <label htmlFor='img_upload'>
                 <ThisImg src={Img.length > 0 ? Img : ImgCloud} alt="" />
@@ -79,23 +95,29 @@ const AddUser = () => {
 
             <NameInp variant='standard' label="Name" type='name' value={first_name} onChange={e => setFirst_name(e.target.value)} />
             <LinkInp variant='standard' label='Last Name' type='text' value={last_name} onChange={e => setLast_name(e.target.value)} />
-            
-            <Stack spacing={1} sx={{ width: '90%' }}>
-              <Autocomplete
-                {...defaultProps}
-                id="clear-on-escape"
-                clearOnEscape
-                renderInput={(params) => (
-                  <TextField {...params} label="Skill" variant="standard" />
-                )}
-              />
-            </Stack>
+
+            <FormControl fullWidth>
+              <InputLabel id="demo-simple-select-label">Age</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={type}
+                label="Age"
+                onChange={e =>  setType(e.target.value)}
+              >
+                {
+                  typeList && typeList.map(list => {
+                    return(<MenuItem value={list.id}>{list.name}</MenuItem>)
+                  }) 
+                }
+              </Select>
+            </FormControl>
 
             <ChooseFileDiv>
               <MuiButton variant="contained" onClick={Myfile}>
                 Choose resume file
               </MuiButton>
-              <ChooseFileInp type="file" id="resumefile" />
+              <ChooseFileInp type="file" id="resumefile" onChange={e => setResume(e.target.files[0])} />
             </ChooseFileDiv>
 
             <CommandDiv>
@@ -112,8 +134,4 @@ const AddUser = () => {
 
 export default AddUser
 
-const top100Films = [
-  { title: 'FrontEnd', id:1 },
-  { title: 'BackEnd' , id :2},
-];
-{/* <PostBtn type='submit' variant='contained'>Add to User</PostBtn> */}
+

@@ -134,7 +134,7 @@ export const CenterDIV = styled.div`
     align-items: center;
 `
 
-export const FormDiv = styled.div`
+export const FormDiv = styled.form`
     width: 400px;
     height: 100%;
     border: 1px solid gray;
