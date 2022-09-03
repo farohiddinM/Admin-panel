@@ -17,13 +17,9 @@ const AddUser = () => {
   // const [ImgtoBackend, setImgtoBackend] = useState(null) 
   const [first_name, setFirst_name] = useState('')
   const [last_name, setLast_name] = useState('')
-<<<<<<< HEAD
   const [imgFech, setImgFech] = useState('')
   const [resume, setResume] = useState('')
   const [type , setType] = useState('')
-=======
-  
->>>>>>> 1b7a5580129ab279044bf0bf5d93db08845a928c
   const SEtImg = (e) => {
     const rasm = e.target.files[0]
     setImgFech(rasm)
@@ -59,7 +55,7 @@ const AddUser = () => {
     formData.append('first_name', first_name)
     formData.append('last_name', last_name)
     formData.append('resume', resume, resume.name)
-    formData.append('type', parseInt(type))
+    formData.append('type', parseInt())
     let token = JSON.parse(localStorage.getItem('token'))
     axios.post('http://127.0.0.1:8000/user-create/', formData, {
       headers: {
