@@ -28,9 +28,12 @@ export const BasicModal = () => {
   const open = useSelector((state) => state.editActions.modalOpen);
   const hello = useSelector((state) => state.deleteActions.deleteOpenModal);
   
+  // Post 
   const [Img, SettingImg] = useState("");
   const [ImgtoBackend, setImgtoBackend] = useState(null);
-
+  const [name, setName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [skill, setskill] = useState('')
   const SEtImg = (e) => {
     const rasm = e.target.files[0];
     SettingImg(URL.createObjectURL(rasm));
@@ -69,8 +72,8 @@ export const BasicModal = () => {
               </ChangeImg>
             </label>
           </EditimgMy>
-          <NameInp label="Name" variant="standard" />
-          <LinkInp label="Last Name" variant="standard" />
+          <NameInp label="Name" variant="standard"  value={name}  onChange={e => setName(e.target.value)}  />
+          <LinkInp label="Last Name" variant="standard" value={lastName}  onChange={e => setLastName(e.target.value)} />
           <MuiOption />
           <ChooseFileDiv>
             <MuiButton variant="contained" onClick={Myfile}>

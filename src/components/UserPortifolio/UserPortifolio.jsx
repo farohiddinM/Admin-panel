@@ -25,7 +25,9 @@ const UserPortifolio = () => {
 
   const [Img, SettingImg] = useState('');
   const [ImgtoBackend, setImgtoBackend] = useState(null)
-
+  const [project_name, setProject_name] = useState('')
+  const [project_link, setproject_link] = useState('')
+  const [comment, setComment] = useState('')
   const SEtImg = (e) => {
     const rasm = e.target.files[0]
     SettingImg(URL.createObjectURL(rasm))
@@ -148,9 +150,9 @@ const UserPortifolio = () => {
   </label>
 </EditimgMy>
 
-<NameInp variant='standard' label="Project Name" type='name' />
-<LinkInp variant='standard' label='Project Link' type='text' />
-<ParagrafInp placeholder='Paragraf Comment' />
+<NameInp variant='standard' label="Project Name" type='name' value={project_name} onChange={e => setProject_name(e.target.value)} />
+<LinkInp variant='standard' label='Project Link' type='text' value={project_link} onChange={e => setproject_link(e.target.value)} />
+<ParagrafInp placeholder='Paragraf Comment' value={comment}  onChange={e => setComment(e.target.value)} />
 <PostBtn variant='contained'>Add to Project</PostBtn>
 
 </FormDiv>

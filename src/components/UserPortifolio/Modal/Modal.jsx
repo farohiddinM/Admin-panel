@@ -29,7 +29,9 @@ const MyModal = () => {
   //UseState
   const [Img, SettingImg] = useState("");
   const [ImgtoBackend, setImgtoBackend] = useState(null);
-
+  const [project_name, setProject_name] = useState('')
+  const [project_link, setproject_link] = useState('')
+  const [comment, setComment] = useState('')
   //Choose File Functions
   const SEtImg = (e) => {
     const rasm = e.target.files[0];
@@ -66,9 +68,9 @@ const MyModal = () => {
             </label>
           </EditimgMy>
 
-          <NameInp label="Project Name" variant="standard" />
-          <LinkInp label="Project Link" variant="standard" />
-          <ParagrafInp placeholder='Paragraf Comment' />
+          <NameInp label="Project Name" variant="standard"   value={project_name} onChange={e => setProject_name(e.target.value)}  />
+          <LinkInp label="Project Link" variant="standard"    value={project_link} onChange={e => setproject_link(e.target.value)}  />
+          <ParagrafInp placeholder='Paragraf Comment' value={comment}  onChange={e => setComment(e.target.value)} />
 
           <CommandDiv>
             <CencleBtn variant="contained" color="error" onClick={() => dispatch(userCloseModal())} >

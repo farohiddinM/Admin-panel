@@ -10,6 +10,9 @@ import  GeekZone  from "../../images/GeekZone.jpg";
 const Posting = () => {
   const [Img, SettingImg] = useState('');
   const [ImgtoBackend, setImgtoBackend] = useState(null)
+  const [project_name, setProject_name] = useState('')
+  const [project_link, setProject_link] = useState('')
+  const [comment, setComment] = useState('')
 
   const SEtImg = (e) => {
     const rasm = e.target.files[0]
@@ -59,9 +62,9 @@ const Posting = () => {
                 </label>
               </EditimgMy>
             
-              <NameInp variant='standard' label="Project Name" type='name' />
-              <LinkInp variant='standard' label='Project Link' type='text' />
-              <ParagrafInp placeholder='Paragraf Comment' />
+              <NameInp variant='standard' label="Project Name" type='name' value={project_name}  onChange={e => setProject_name(e.target.value)} />
+              <LinkInp variant='standard' label='Project Link' type='text' value={project_link}   onChange={e => setProject_link(e.target.value)} />
+              <ParagrafInp placeholder='Paragraf Comment' value={Comment}  onChange={e => setComment(e.target.value)} />
 
               <CommandDiv>
                 <MuiCencleBtn onClick={TeamGroup} type='submit' variant='contained' color='error'>Cencle</MuiCencleBtn>

@@ -17,6 +17,7 @@ const AddUser = () => {
   const [ImgtoBackend, setImgtoBackend] = useState(null)
   const [first_name, setFirst_name] = useState('')
   const [last_name, setLast_name] = useState('')
+  
   const SEtImg = (e) => {
     const rasm = e.target.files[0]
     SettingImg(URL.createObjectURL(rasm))
