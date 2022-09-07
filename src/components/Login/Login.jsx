@@ -69,7 +69,7 @@ const Login = () => {
         </FormDiv>
       </CenterDiv>
     </MainDiv>
-  );
+  ); 
 };
 
 export default Login;
